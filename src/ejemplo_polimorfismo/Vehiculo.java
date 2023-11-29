@@ -4,7 +4,7 @@ public class Vehiculo {
 
     private String color;
 
-    private Integer cantidadPasajeros = 2;
+    private Integer cantidadMaxPasajeros = 2;
 
     private Integer cantidadRuedas = 2;
 
@@ -21,9 +21,9 @@ public class Vehiculo {
 //  En el caso de que querramos hacer otro tipo de vehiculo
 //  podemos usar el constructor con todos los parametros y reasignar
 //  la cantidad de pasajeros y ruedas del vehiculo
-    public Vehiculo(String color, Integer cantidadPasajeros, Integer cantidadRuedas, String tipo) {
+    public Vehiculo(String color, Integer cantidadMaxPasajeros, Integer cantidadRuedas, String tipo) {
         this.color = color;
-        this.cantidadPasajeros = cantidadPasajeros;
+        this.cantidadMaxPasajeros = cantidadMaxPasajeros;
         this.cantidadRuedas = cantidadRuedas;
         this.tipo = tipo;
     }
@@ -39,12 +39,12 @@ public class Vehiculo {
         this.color = color;
     }
 
-    public Integer getCantidadPasajeros() {
-        return cantidadPasajeros;
+    public Integer getCantidadMaxPasajeros() {
+        return cantidadMaxPasajeros;
     }
 
-    public void setCantidadPasajeros(Integer cantidadPasajeros) {
-        this.cantidadPasajeros = cantidadPasajeros;
+    public void setCantidadMaxPasajeros(Integer cantidadMaxPasajeros) {
+        this.cantidadMaxPasajeros = cantidadMaxPasajeros;
     }
 
     public Integer getCantidadRuedas() {
@@ -61,5 +61,20 @@ public class Vehiculo {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+
+//  El metodo toString() es heredado por todas las clases,
+//  ya que esta declarado dentro de la clase Object que es la
+//  clase raiz de java. Al sobreescribirlo estamos haciendo
+//  poliformismo dinamico o en tiempo de ejecucion.
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "color='" + color + '\'' +
+                ", cantidadMaxPasajeros=" + cantidadMaxPasajeros +
+                ", cantidadRuedas=" + cantidadRuedas +
+                ", tipo='" + tipo + '\'' +
+                '}';
     }
 }
